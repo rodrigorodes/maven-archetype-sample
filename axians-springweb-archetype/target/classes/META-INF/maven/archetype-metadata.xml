@@ -1,0 +1,38 @@
+<archetype-descriptor
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd
+        http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	name="microprofile12">
+
+	<!-- Propriedades requeridas na criação do projecto -->
+	<requiredProperties>
+		<requiredProperty key="component-scan">
+			<defaultValue>pt.axians</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+
+	<!-- Definição de conjuntos de arquivos, neste exemplo queremos que todos 
+		os arquivos sejam copiados -->
+	<fileSets>
+		<fileSet filtered="true" packaged="true">
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="false">
+			<directory>src/main/resources</directory>
+		</fileSet>
+		<fileSet filtered="true" packaged="false">
+			<directory>src/test/java</directory>
+		</fileSet>
+		<fileSet filtered="true" packaged="false">
+			<directory>src/main/webapp</directory>
+			<includes>
+				<include>**/**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+</archetype-descriptor>
